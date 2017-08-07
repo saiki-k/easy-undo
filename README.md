@@ -22,7 +22,7 @@ const sampleAppState = {};
 const maxLength = 10;
 
 // We need a function which provides the required object in its "current" form
-// to the EasyUndo instance, via a callback function:
+// to the EasyUndo instance, whenever required, via a callback function:
 const provider = (cb) => cb(JSON.stringify(sampleAppState));
 
 // Let's instantiate EasyUndo
