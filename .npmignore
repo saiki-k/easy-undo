@@ -1,0 +1,6 @@
+src/
+tests/
+docs/
+.eslintignore
+.eslintrc.json
+esdoc.json

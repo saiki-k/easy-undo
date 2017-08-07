@@ -1,0 +1,66 @@
+{
+  "name": "easy-undo",
+  "version": "1.0.0",
+  "description": "A simple JavaScript undo/redo interface; for easy management of 'state' histories in an application",
+  "main": "./build/easy-undo.js",
+  "scripts": {
+    "build": "babel src --ignore tests/ -d build",
+    "lint": "node_modules/.bin/eslint ./src/easy-undo.js",
+    "test": "jest",
+    "clear:build": "rimraf build",
+    "clear:docs": "rimraf docs",
+    "generate:docs": "npm run clear:docs && esdoc",
+    "serve:docs": "npm run generate:docs && cd docs && serve",
+    "clear": "npm run clear:docs && npm run clear:build",
+    "prepublish": "npm run clear && npm run build"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "remove-comments"
+    ]
+  },
+  "jest": {
+    "transform": {
+      ".js": "babel-jest"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fatman-/easy-undo.git"
+  },
+  "keywords": [
+    "undo",
+    "redo",
+    "history"
+  ],
+  "author": "Sai Kishore Komanduri",
+  "contributors": [
+    {
+      "name": "Matthias Jouan",
+      "url": "https://github.com/mattjmattj"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fatman-/easy-undo/issues"
+  },
+  "homepage": "https://github.com/fatman-/easy-undo",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-plugin-remove-comments": "^2.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "esdoc": "^1.0.1",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^4.2.0",
+    "jest": "^20.0.4",
+    "rimraf": "^2.6.1"
+  }
+}
